@@ -1,9 +1,5 @@
 FlowChart
-  = flows:FlowBox+ {
-      return {
-        flows: flows,
-      };
-    }
+  = flows:FlowBox+ { return flows; }
 
 FlowBox
   = box:TextBox _ connections:FlowConnection * {
@@ -34,7 +30,8 @@ Label
   = [a-zA-Z0-9\-\_ ]+ { return text(); }
 
 String
-  = [\"\'] s:PlainString+ [\"\'] { return s.join(""); }
+  = '"' s:PlainString '"' { return s; }
+  / "'" s:PlainString "'" { return s; }
   / PlainString
 
 PlainString

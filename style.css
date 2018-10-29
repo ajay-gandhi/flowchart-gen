@@ -1,0 +1,6 @@
+.preformatted {
+  font-family: monospace;
+  white-space: pre;
+  background-color: #eee;
+  padding: 5px;
+}
